@@ -1,0 +1,3 @@
+<td><small><%= @id %></small></td>
+<td><p><%= @client %></p></td>
+<td><button class="btn edit">Edit</button></td>

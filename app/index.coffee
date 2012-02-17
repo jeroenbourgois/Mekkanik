@@ -5,6 +5,7 @@ $       = Spine.$
 
 HomeController = require 'controllers/home'
 JobController = require 'controllers/jobs'
+JoblistController = require 'controllers/joblist'
 Job = require 'models/job'
 
 class App extends Spine.Controller
@@ -38,7 +39,7 @@ class App extends Spine.Controller
       "/" : (params) ->
         @gotoHome()
       "/jobs" : (params) ->
-        @jobController.list.active(params)
+        @joblistController.active(params)
       "/job/:id": (params) ->
         @jobController.show.active(params)
       "/job/:id/edit": (params) ->
@@ -47,8 +48,6 @@ class App extends Spine.Controller
     Spine.Route.setup()
 
     @navigate "/"
-
-    Job.fetch()
 
   gotoHome: ->
     @homeController.active()

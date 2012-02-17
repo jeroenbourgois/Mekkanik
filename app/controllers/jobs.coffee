@@ -40,12 +40,27 @@ class Show extends Spine.Controller
     @item = Job.find(params.id)
     @render()
 
+  show: (job) ->
+    @item = job
+    @render()
+
+class Row extends Spine.Controller
+  className: 'job-row'
+
+  tag: 'tr'
+
+  constructor: ->
+    super
+
+  render: (job) ->
+    @html require('views/job-row')(job)
 
 class JobController extends Spine.Stack
   className: 'jobcontroller stack'
     
   controllers:
     show: Show
+    row: Row
     edit: Edit
     
 module.exports = JobController

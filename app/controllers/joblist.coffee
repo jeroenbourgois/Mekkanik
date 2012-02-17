@@ -1,37 +1,34 @@
 Spine = require('spine')
 
 Job = require('models/job')
+JoblistitemController = require 'controllers/joblistitem'
 
 class Joblist extends Spine.Controller
   className: 'joblist'
 
-  events:
-    'click .edit': 'edit'
-
   elements:
-    'tbody': 'list'
+    'tbody': 'joblist'
 
   constructor: ->
     super
-    @active @change
 
-  render: =>
-    @html require('views/jobs')(jobs: @jobs)
+    Job.fetch()
+
+    @active @change
+    console.log 'ctor'
+
+    @addAll()
 
   change: (params) =>
-    @jobs = Job.all()
-    @render()
+    return
 
-  addOne: (job) ->
+  addOne: (job) =>
+    view = new JoblistitemController(item: job)
+    view.render()
+    @joblist.append view.el
 
   addAll: =>
+    @html = ""
     Job.each(@addOne)
-
-  edit: (e) ->
-    console.log(e)
-    console.log(e.target)
-    element = $(e.target)
-    item = element.data('item')
-    console.log item
 
 module.exports = Joblist
