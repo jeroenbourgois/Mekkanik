@@ -9,11 +9,10 @@ class Actions extends Spine.Controller
     super
 
   addJob: (event) ->
-    job = new Job()
-    # @navigate '/job/' + job.id + '/edit'
-    @navigate '/job'
+    job = Job.create()
+    @navigate '/job/' + job.id + '/edit'
 
   render: ->
-    @html require 'views/actions'
+    @html require 'views/home'
     
 module.exports = Actions

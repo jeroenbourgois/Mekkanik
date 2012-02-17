@@ -3,42 +3,59 @@ require 'lib/setup'
 Spine   = require 'spine'
 $       = Spine.$
 
-Actions = require 'controllers/actions'
-JobEditController = require 'controllers/jobs.edit'
+HomeController = require 'controllers/home'
+JobController = require 'controllers/jobs'
+Job = require 'models/job'
 
 class App extends Spine.Controller
   className: "mekkanik app"
 
   elements:
-    "#actions": "actions"
+    "#home": "home"
     "#job": "job"
+    "#joblist": "joblist"
+
+  events:
+    'click #gotoJobs': 'gotoJobs'
+    'click #gotoHome': 'gotoHome'
+    'click .brand': 'gotoHome'
 
   constructor: ->
     super
 
-    @actionsController = new Actions({el : @actions})
-    @jobEditController = new JobEditController({el: @job})
+    # controllers
+    @homeController = new HomeController({el : @home})
+    @jobController = new JobController({el: @job})
+    @joblistController = new JoblistController({el: @joblist})
 
-    @manager = new Spine.Manager @actionsController, @jobEditController
-    @actionsController.active()
-
+    # manager, show one controller at a time
+    @manager = new Spine.Manager @homeController, @jobController, @joblistController
     @manager.bind 'change', (controller)->
       console.log 'stack change', this, arguments
 
+    # routes
     @routes
       "/" : (params) ->
-        @home()
-      "/job": (params) ->
-        @jobEditController.active().render()
+        @gotoHome()
+      "/jobs" : (params) ->
+        @jobController.list.active(params)
+      "/job/:id": (params) ->
+        @jobController.show.active(params)
       "/job/:id/edit": (params) ->
-        @jobEditController.active().render()
+        @jobController.edit.active(params)
 
     Spine.Route.setup()
 
     @navigate "/"
 
-  home: =>
-    @actionsController.render()
+    Job.fetch()
+
+  gotoHome: ->
+    @homeController.active()
+    @homeController.render()
+
+  gotoJobs: =>
+    @navigate '/jobs'
 
 module.exports = App
     

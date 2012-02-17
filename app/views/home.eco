@@ -1,1 +1,6 @@
+<header class="hero-unit">
+  <h1>Mekkanik</h1>
+  <p>Simple timetracking</p>
+</header>
+
 <a href="#" id="addJob" class="btn btn-large btn-primary"><i class="icon-plus icon-white"></i> Add job</a>

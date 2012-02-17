@@ -19,18 +19,42 @@
 </head>
 <body>
   <div class="container">
-    <header class="hero-unit">
-      <h1>Mekkanik</h1>
-      <p>Timetracking</p>
-    </header>
 
     <section id="app">
-      
-      <section id="actions"></section>
+
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">Mekkanik</a>
+            <ul class="nav">
+              <li><a href="#" id="gotoHome">Home</a></li>
+              <li><a href="#" id="gotoJobs">Jobs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+
+      <section id="home">
+      </section>
 
       <section id="job"></section>
 
-      <section id="jobs"></section>
+      <section id="joblist">
+
+        <h1>Jobs</h1>
+
+        <table id="joblist" class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Client</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
 
     </section>
   </div>
