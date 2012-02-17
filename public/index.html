@@ -2,18 +2,37 @@
 <html>
 <head>
   <meta charset=utf-8>
-  <title>App</title>
+  <title>Mekannik</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="/application.css" type="text/css" charset="utf-8">
+
   <script src="/application.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
     var jQuery  = require("jqueryify");
     var exports = this;
     jQuery(function(){
       var App = require("index");
-      exports.app = new App({el: $("body")});      
+      exports.app = new App({el: $("#app")});      
     });
   </script>
 </head>
 <body>
+  <div class="container">
+    <header class="hero-unit">
+      <h1>Mekkanik</h1>
+      <p>Timetracking</p>
+    </header>
+
+    <section id="app">
+      
+      <section id="actions"></section>
+
+      <section id="job"></section>
+
+      <section id="jobs"></section>
+
+    </section>
+  </div>
 </body>
 </html>

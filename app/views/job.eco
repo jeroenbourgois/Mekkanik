@@ -1,0 +1,12 @@
+<form>
+  <h1>Job<small>#<%= @id %></small></h1>
+
+  <label for="">Klant</label>
+  <input type="client" placeholder="Klantennaam" />
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="reset" class="btn">Cancel</button>
+  </div>
+</form>
+
