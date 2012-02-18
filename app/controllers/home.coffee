@@ -10,7 +10,7 @@ class Actions extends Spine.Controller
 
   addJob: (event) ->
     job = Job.create()
-    @navigate '/job/' + job.id + '/edit'
+    @navigate('/job/' + job.id + '/edit')
 
   render: ->
     @html require 'views/home'

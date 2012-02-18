@@ -9,6 +9,7 @@ class Joblistitem extends Spine.Controller
 
   events:
     'click .edit': 'edit'
+    'dblclick *': 'edit'
 
   constructor: ->
     super

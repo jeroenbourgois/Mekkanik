@@ -19,16 +19,16 @@
     <label for="description">Omschrijving</label>
     <div class="controls">
       <textarea name="description" placeholder="Omschrijving" class="span4" rows="10"><%= @description %></textarea>
-
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" for="duration">Tijdsduur</label>
     <div class="controls">
-      <input type="text" name="duration" class="input-small" value="<%= @duration %>" placeholder="Tijdsduur" />
+      <input type="text" name="duration" id="duration" class="input-small" value="<%= @duration %>" placeholder="00:00:00" />
       <p class="help-inline">hh:mm</p>
-      <button id="startTimer" class="btn btn-info">Timer starten</button>
+      <button id="toggleTimer" class="btn btn-info">Timer starten</button>
+      <button id="resetTimer" class="btn" disabled>Timer herstarten</button>
     </div>
   </div>
 
