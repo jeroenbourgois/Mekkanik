@@ -1,8 +1,36 @@
-<form>
-  <h1>Job<small>#<%= @id %></small></h1>
+<form class="form-horizontal">
+  <h1>Job <small>#<%= @id %></small></h1>
 
-  <label for="">Klant</label>
-  <input type="text" name="client" value="<%= @client %>" placeholder="Klantennaam" />
+  <div class="control-group">
+    <label class="control-label" for="client">Klant</label>
+    <div class="controls">
+      <input type="text" name="client" value="<%= @client %>" placeholder="Klantennaam" />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="carID">Auto ID</label>
+    <div class="controls">
+      <input type="text" name="carID" value="<%= @carID %>" placeholder="Auto registratienummer" />
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label for="description">Omschrijving</label>
+    <div class="controls">
+      <textarea name="description" placeholder="Omschrijving" class="span4" rows="10"><%= @description %></textarea>
+
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="duration">Tijdsduur</label>
+    <div class="controls">
+      <input type="text" name="duration" class="input-small" value="<%= @duration %>" placeholder="Tijdsduur" />
+      <p class="help-inline">hh:mm</p>
+      <button id="startTimer" class="btn btn-info">Timer starten</button>
+    </div>
+  </div>
 
   <div class="form-actions">
     <button id="submit" type="submit" class="btn btn-primary">Save changes</button>

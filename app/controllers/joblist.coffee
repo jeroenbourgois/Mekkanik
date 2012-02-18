@@ -9,6 +9,9 @@ class Joblist extends Spine.Controller
   elements:
     'tbody': 'joblist'
 
+  events:
+    'click .deleteJobs': 'delete'
+
   constructor: ->
     super
 
@@ -31,5 +34,14 @@ class Joblist extends Spine.Controller
   addAll: =>
     @html = ""
     Job.each(@addOne)
+
+  delete: (e) ->
+    e.preventDefault()
+
+    if confirm('Alle geselecteerde jobs verwijderen?')
+      $('input[type=checkbox]:checked').each ->
+        job = Job.find($(this).attr('data-job-id'))
+        job.destroy()
+      @change()
 
 module.exports = Joblist

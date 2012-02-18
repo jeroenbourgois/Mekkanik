@@ -1,7 +1,7 @@
 Spine = require('spine')
 
 class Job extends Spine.Model
-  @configure 'Job', 'client'
+  @configure 'Job', 'client', 'carID', 'description', 'date', 'duration'
 
   @extend Spine.Model.Local
   
