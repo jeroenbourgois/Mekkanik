@@ -15,10 +15,12 @@ class Joblistitem extends Spine.Controller
 
     @active @change
 
+    @item.bind 'update', @render
+
   change: (params) =>
     @render()
 
-  render: ->
+  render: =>
     @html require('views/joblistitem')(@item)
 
   edit: (e) ->

@@ -3,7 +3,7 @@ Job = require 'models/job'
 
 class Actions extends Spine.Controller
   events:
-    'click #addJob': 'addJob'
+    'click .addJob': 'addJob'
     
   constructor: ->
     super

@@ -8,7 +8,8 @@ class Edit extends Spine.Controller
     'form': 'form'
 
   events:
-    'click .submit': 'submit'
+    'click #submit': 'submit'
+    'click #delete': 'destroy'
 
   constructor: ->
     super
@@ -24,7 +25,12 @@ class Edit extends Spine.Controller
   submit: (e) ->
     e.preventDefault()
     @item.fromForm(@form).save()
-    @navigate '/'
+    @navigate '/jobs'
+
+  destroy: (e) ->
+    e.preventDefault()
+    @item.destroy() if confirm('Wil je deze job verwijderen?')
+    @navigate '/jobs'
 
 class Show extends Spine.Controller
   className: 'job-show'

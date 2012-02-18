@@ -15,12 +15,13 @@ class Joblist extends Spine.Controller
     Job.fetch()
 
     @active @change
-    console.log 'ctor'
+
+  change: (params) ->
+    # TODO: this is NOT right, but how do I do this?
+    # how do I clear a view?
+    @joblist.html("")
 
     @addAll()
-
-  change: (params) =>
-    return
 
   addOne: (job) =>
     view = new JoblistitemController(item: job)
