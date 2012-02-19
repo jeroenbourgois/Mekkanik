@@ -1,11 +1,6 @@
-@import "/css/bootstrap.css";
-@import "/css/bootstrap-responsive.min.css";
 #app section {
   display: none;
 }
 #app section.active {
   display: block;
-}
-body {
-  background-color: #f00;
 }
