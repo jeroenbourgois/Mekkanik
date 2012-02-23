@@ -11,6 +11,7 @@ class Joblist extends Spine.Controller
 
   events:
     'click .deleteJobs': 'delete'
+    'click .addJob': 'add'
 
   constructor: ->
     super
@@ -43,5 +44,11 @@ class Joblist extends Spine.Controller
         job = Job.find($(this).attr('data-job-id'))
         job.destroy()
       @change()
+
+  add: (e) ->
+    e.preventDefault()
+    job = Job.create()
+    @navigate('/job/' + job.id + '/edit')
+
 
 module.exports = Joblist

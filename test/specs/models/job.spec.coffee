@@ -1,4 +1,4 @@
-require = window.require
+Spine = require('spine')
 
 describe 'Job', ->
   Job = require('models/job')
