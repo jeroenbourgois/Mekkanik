@@ -1,7 +1,0 @@
-<td class="span1"><input type="checkbox" data-job-id="<%= @id %>" name="selected" /></td>
-<td class="span3"><%= @client %></td>
-<td class="span3"><%= @carID %></td>
-<td><%= @description %></td>
-<td class="span2"><%= @date %></td>
-<td class="span2"><%= @duration %></td>
-<td><button class="btn edit">Edit</button></td>
