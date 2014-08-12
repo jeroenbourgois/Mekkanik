@@ -5,11 +5,21 @@
     "node": "*"
   },
   "dependencies": { 
+<<<<<<< HEAD
     "serveup": "latest",
     "hem": "latest",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
     "jqueryify": "~0.0.1",
     "spine": "latest"
+=======
+    "serveup": "~0.0.4",
+    "ace": ">= 0.0.1",
+    "hem": "~0.1.7",
+    "es5-shimify": "~0.0.1",
+    "json2ify": "~0.0.1",
+    "jqueryify": "~0.0.1",
+    "spine": "~1.0.6"
+>>>>>>> 575aeb04b503d4244e35c14b74af2823fb1ea044
   }
 }
