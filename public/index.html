@@ -10,10 +10,12 @@
     var exports = this;
     jQuery(function(){
       var App = require("index");
-      exports.app = new App({el: $("body")});      
+      exports.app = new App({el: $("#article")});      
     });
-  </script>
+  </script>  
 </head>
 <body>
+  <header id="header"><h1>Spine Contacts</h1></header>
+  <article id="article"></article>
 </body>
 </html>
